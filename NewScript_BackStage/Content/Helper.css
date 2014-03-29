@@ -1,0 +1,30 @@
+﻿/*
+    Z-index 
+    交互提示>=8000
+*/
+
+.menu_icon_msg { background: url(/Content/Images/Helper/MenuIcon.png) center 0px no-repeat; }
+    .menu_icon_msg.select { background: url(/Content/Images/Helper/MenuIcon.png) center -288px no-repeat; }
+.menu_icon_calendar { background: url(/Content/Images/Helper/MenuIcon.png) center -72px no-repeat; }
+    .menu_icon_calendar.select { background: url(/Content/Images/Helper/MenuIcon.png) center -360px no-repeat; }
+.menu_icon_report { background: url(/Content/Images/Helper/MenuIcon.png) center -144px no-repeat; }
+    .menu_icon_report.select { background: url(/Content/Images/Helper/MenuIcon.png) center -432px no-repeat; }
+.menu_icon_pointer { background: url(/Content/Images/Helper/MenuIcon.png) center -216px no-repeat; }
+    .menu_icon_pointer.select { background: url(/Content/Images/Helper/MenuIcon.png) center -504px no-repeat; }
+
+.icon-set { background: url(/Content/Images/Helper/icon-set.png) no-repeat center center #fff; display: block; width: 26px; height: 26px; }
+.icon-tips-frame { position: relative; }
+    .icon-tips-frame .icon-tips { background: url(/Content/Images/Helper/icon-tips.png) no-repeat center center; display: block; width: 19px; height: 19px; position: absolute; text-align: center; color: #fff; text-indent: initial; line-height: 19px; }
+
+
+
+/**/
+.LoadingWrap { position: fixed; width: 100%; height: 100%; z-index: 8000; }
+    .LoadingWrap .LoadingShade { background: #000; opacity: 0.4; width: 100%; height: 100%; overflow: hidden; z-index: 8001; position: absolute; }
+    .LoadingWrap .LoadingContainer { overflow: hidden; position: relative; width: 100%; height: 100%; z-index: 8002; }
+        .LoadingWrap .LoadingContainer .LoadingContent { position: absolute; top: 40%; left: 50%; }
+            .LoadingWrap .LoadingContainer .LoadingContent img { border: none; padding: 0px; margin: 0px; width: 60px; height: 60px; position: relative; left: -30px; top: -30px; }
+
+.ShadeWrap { position: fixed; width: 100%; height: 100%; z-index: 8000; }
+    .ShadeWrap .ShadeContainer { background: #000; opacity: 0.4; width: 100%; height: 100%; overflow: hidden; z-index: 8001; position: absolute; }
+        .ShadeWrap .ShadeContainer .ShadeContent { }

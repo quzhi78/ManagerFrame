@@ -1,0 +1,84 @@
+﻿@{
+    Layout = null;
+}
+@model NewScript_BackStage.Models.AccountModel
+<!DOCTYPE html>
+<html>
+<head>
+    <title>管理登录界面</title>
+    <meta name="viewport" content="width=device-width" />
+    @Scripts.Render("~/Script/jQuery")
+    <style type="text/css">
+        table { border-top: 0px; border-bottom: 1px solid #999; border-left: 1px solid #999; border-right: 1px solid #999; padding: 1px; font-weight: bold; }
+        TD { padding: 5px; color: #333; }
+        #Password1 { width: 50px; }
+        #uv { width: 70px; }
+        #user_name { width: 155px; }
+        #user_pass { width: 155px; }
+        .login_power_html { margin: 0px; padding: 0px; FONT-SIZE: 12px; BACKGROUND: #fff; COLOR: #666; LINE-HEIGHT: 1.8; FONT-FAMILY: Verdana, "微软雅黑", Arial,Sans; TEXT-ALIGN: center; margin-top: 50px; }
+        .input-button { BORDER-TOP-WIDTH: 0px; PADDING-RIGHT: 2px; PADDING-LEFT: 2px; BORDER-LEFT-WIDTH: 0px; FONT-SIZE: 12px; BACKGROUND: url(images/button_bg.gif) no-repeat; BORDER-BOTTOM-WIDTH: 0px; WIDTH: 90px; MARGIN-RIGHT: 8px; PADDING-TOP: 1px; HEIGHT: 21px; BORDER-RIGHT-WIDTH: 0px; }
+    </style>
+</head>
+<body>
+    <div align="center" style="margin-top: 50px;">
+        <div style="background-image: url('images/manage_top.jpg'); width: 510px; height: 93px;"></div>
+        @using (Html.BeginForm("Login", "Account", FormMethod.Post))
+        {
+            <table width="510" style="font-size: 14px" border="0" cellspacing="0" cellpadding="0">
+                <tr>
+                    <td style="text-align: right;">用户名：</td>
+                    <td width="285">
+                        <div align="left">
+                            @Html.TextBoxFor(m => m.UserName, new { id = "user_name", @size = "18", @style = "margin-right: 5px" })
+                            @*<input name="user_name" type="text" id="user_name" size="18" style="margin-right: 5px" />*@
+                            @*<asp:requiredfieldvalidator id="RequiredFieldValidator1" controltovalidate="user_name" errormessage="请输入用户名"></asp:requiredfieldvalidator>*@
+                        </div>
+                    </td>
+                </tr>
+                <tr>
+                    <td style="text-align: right;">密码：</td>
+                    <td>
+                        <div align="left">
+                            @Html.TextBoxFor(m => m.Password, new { @id = "user_pass", @size = "18", @style = "margin-right: 5px" })
+                            @*<input name="user_pass" type="password" id="user_pass" size="18" style="margin-right: 5px" />*@
+                            @*<asp:requiredfieldvalidator id="RequiredFieldValidator2" controltovalidate="user_pass" errormessage="请输入密码"></asp:requiredfieldvalidator>*@
+                        </div>
+                    </td>
+                </tr>
+                <tr>
+                    <td style="text-align: right;">验证码：</td>
+                    <td>
+                        <div align="left">
+                            <div style="float: left; padding: 4px; text-align: justify; padding-left: 0; padding-right: 0;">
+                                @Html.TextBoxFor(m => m.VerificationCode, new { @id = "uv", @autocomplete = "off", @style = "margin-right:2px;" })
+                            </div>
+                            <div style="padding-top: 6px;">
+                                <img src='/Global/ValidateCode/' id='img1' onclick="this.src = '/Global/ValidateCode/' + Math.random()" style="cursor: hand;" />
+                            </div>
+                        </div>
+                    </td>
+                </tr>
+                <tr>
+                    <td colspan="2" align="center">
+                        <hr width="80%">
+                        <br />
+
+                        <button id="btnLogin" class="input-button" title="Login" />
+                        &nbsp;<br />
+                        &nbsp;<br />
+                    </td>
+                </tr>
+            </table>
+        }
+        <p class="login_power_html">
+            www.i200.cn&nbsp;<br />
+            &copy; 2014 all right reserved.
+        </p>
+    </div>
+    <script type="text/javascript">
+        $(document).ready(function () {
+            $("#img1").attr("src", '/Global/ValidateCode/' + Math.random());
+        });
+    </script>
+</body>
+</html>

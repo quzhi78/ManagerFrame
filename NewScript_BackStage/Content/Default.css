@@ -1,0 +1,69 @@
+﻿/*
+    Z-index 
+    交互提示>=8000
+    顶部浮动>=5000
+    左侧浮动>=2000
+    主要框体>=0
+
+    Wrap      外包围框体
+    Container 防溢出-外定位框体
+    Content   浮动层-内定位框体
+*/
+
+/*公共定义*/
+.min { height: 0px; overflow: hidden; }
+    .min > * { opacity: 0; display: none; }
+.max { height: auto; overflow: hidden; }
+.noScroll { height: 0px; overflow: hidden; position: relative; }
+    .noScroll > * { opacity: 0; display: none; }
+.show { display: block; }
+.hidden { display: none; }
+.clear { clear: both; }
+.l_Content { float: left; }
+.r_Content { float: right; }
+.tl { text-align: left; }
+.tr { text-align: right; }
+
+a, h1, h2, h3, h4, h5, p, span { font-family: 'Microsoft YaHei'; }
+h1, h2, h3, h4 { color: #6c757e; }
+ul { list-style-type: none; }
+a { color: #89949f; transition: all 0.3s; }
+    a:hover { color: #cdd4db; text-decoration: none; }
+
+/*通用框体*/
+.Wrap { }
+    .Wrap .Container { }
+        .Wrap .Container .Content { position: relative; overflow: hidden; }
+
+/*头部面板*/
+.HeaderPanel { position: fixed; top: 0; left: 0; width: 100%; height: 72px; background: #34383c; z-index: 5000; }
+    .HeaderPanel .HeaderPanel_Container { width: 100%; height: 72px; overflow: hidden; }
+        .HeaderPanel .HeaderPanel_Container .HeaderPanelLogo { height: 48px; width: 144px; background: #1c2125; padding: 12px 0; }
+        .HeaderPanel .HeaderPanel_Container .HeaderPanelItem { height: 72px; padding-left: 40px; }
+            .HeaderPanel .HeaderPanel_Container .HeaderPanelItem ul { overflow: hidden; padding: 28px 0; }
+                .HeaderPanel .HeaderPanel_Container .HeaderPanelItem ul li { float: left; margin-right: 40px; }
+                    .HeaderPanel .HeaderPanel_Container .HeaderPanelItem ul li a { font-size: 16px; }
+        .HeaderPanel .HeaderPanel_Container .HeaderPanelSearch a { display: block; cursor: pointer; background: url(/Content/Images/Search.png) no-repeat center center; width: 72px; height: 72px; }
+            .HeaderPanel .HeaderPanel_Container .HeaderPanelSearch a.select { background-color: #45494d; }
+            .HeaderPanel .HeaderPanel_Container .HeaderPanelSearch a:hover { background-color: #45494d; }
+        .HeaderPanel .HeaderPanel_Container .HeaderPanelMenu { background: #1c2125; width: 196px; height: 100%; }
+
+/*左侧工具栏*/
+.ToolBar_Wrap { position: fixed; top: 0; left: 0; width: 144px; height: 100%; background: #91c46b; z-index: 2000; }
+    .ToolBar_Wrap .ToolBar_Container { overflow: hidden; padding: 72px 0 0 0; }
+        .ToolBar_Wrap .ToolBar_Container .ToolBar_Content { }
+.ToolBar_Content ul { }
+    .ToolBar_Content ul li { }
+        .ToolBar_Content ul li a { display: block; width: 144px; height: 72px; text-indent: -9999px; }
+            .ToolBar_Content ul li a.select { background-color: #abdb88; }
+            .ToolBar_Content ul li a:hover { background-color: #9bcc76; }
+
+/*主框体*/
+.Main_Wrap { z-index: 0; position: relative; width: auto; height: 1000px; padding: 72px 0 0 144px; background: #f6f6f6; }
+    .Main_Wrap .Search_Container { position: relative; overflow: hidden; }
+        .Main_Wrap .Search_Container .Search_Content { background: #45494d; height: 72px; }
+    .Main_Wrap .Main_Container { position: relative; }
+        .Main_Wrap .Main_Container .Main_Title { height: 52px; padding: 20px 0 0 0; background: #fff; overflow: hidden; }
+            .Main_Wrap .Main_Container .Main_Title h2, .Main_Wrap .Main_Title span { float: left; }
+            .Main_Wrap .Main_Container .Main_Title h2 { font-size: 26px; padding-left: 40px; margin-right: 15px; }
+        .Main_Wrap .Main_Container .Main_Content { background: url(/Content/Images/Shadow.png) repeat-x; padding: 3px 0; }
