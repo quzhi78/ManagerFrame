@@ -14,45 +14,12 @@
     <div class="Wrap">
         <div class="Container">
             <div class="Content">
-                <div class="HeaderPanel">
-                    <div class="HeaderPanel_Container">
-                        <div class="HeaderPanelLogo l_Content">
-                            <img src="~/Content/Images/Logo.png" alt="生意专家" />
-                        </div>
-                        <div class="HeaderPanelItem l_Content">
-                            <ul>
-                                <li><a href="javascript:;">快捷菜单</a></li>
-                                <li><a href="javascript:;">快捷菜单</a></li>
-                                <li><a href="javascript:;">快捷菜单</a></li>
-                                <li><a href="javascript:;">快捷菜单</a></li>
-                            </ul>
-                        </div>
-
-                        <div class="HeaderPanelMenu r_Content">
-                            <div class="Menu_Box">
-                                <ul>
-                                    <li><a href="javascript:;"></a></li>
-                                </ul>
-                            </div>
-                        </div>
-                        <div class="HeaderPanelSearch r_Content">
-                            <a href="javascript:;" onclick="javascript: $.Helper.Toggle.Class(this, 'select|'); $.HelperSearch.Frames.Toggles(this);"></a>
-                        </div>
+                <div class="ToolsBar">
+                    <div class="Logo">
+                        <img src="~/Content/Images/Logo.png" alt="" />
                     </div>
                 </div>
-                <div class="ToolBar_Wrap">
-                    <div class="ToolBar_Container">
-                        <div class="ToolBar_Content">
-                            <ul>
-                                <li><a class="menu_icon_msg select" href="javascript:;">平台回访</a></li>
-                                <li><a class="menu_icon_calendar" href="javascript:;">日检</a></li>
-                                <li><a class="menu_icon_report" href="javascript:;">推广管理</a></li>
-                                <li><a class="menu_icon_pointer" href="javascript:;">任务管理</a></li>
-                            </ul>
-                        </div>
-                    </div>
-                </div>
-                <div class="Main_Wrap">
+                <div class="MainBox">
                     @RenderBody()
                 </div>
             </div>
