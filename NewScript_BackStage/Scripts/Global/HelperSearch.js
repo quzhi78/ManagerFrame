@@ -3,6 +3,7 @@
 * By : Vito
 * Date: 2014-03-28
 * 搜索功能模块
+* 依赖组件 - Helper.js
 */
 (function ($) {
     jQuery.HelperSearch = {};
@@ -12,20 +13,36 @@
         var _Helper = $.Helper;
 
         $.HelperSearch.Html = {
-
+            Container: '<div class="Search_Container" style="display:none;"><div class="Search_Content"></div></div>',
         }
 
-        $.HelperSearch.Selector  ={
-            Container : function(){
-                return $('.Search_Container');
+        $.HelperSearch.Selector = {
+            Container: function () {
+                return $('.Search_Container', _Helper.Selector.Frames.MainContent);
             }
         }
 
         $.HelperSearch.Frames = {
-            Show: function () {
-                $.Helper.View.MainView.MoveTo(72);
-            },
-            Hide: function () {
+            Toggles: function (Element) {
+                var AnimateStyle = {
+                    Css: {
+                        display: "block",
+                    },
+                    Before:{
+                    },
+                    After: {
+                    }
+                }
+                switch (parseInt($(Element).attr("data-toggle"))) {
+                    case 0:
+                        _Helper.Selector.Frames.MainContent.prepend(_HelperSearch.Html.Container);
+                        _HelperSearch.Selector.Container().css(AnimateStyle.Css).stop().animate(AnimateStyle.After);
+                        break;
+                    case 1:
+                        _HelperSearch.Selector.Container().css(AnimateStyle.Css).stop().animate(AnimateStyle.Before);
+                        _HelperSearch.Selector.Container().remove();
+                        break
+                }
             },
             Clear: function () {
             }
@@ -37,11 +54,11 @@
         $.HelperSearch.Server = {
         }
 
-        return $.Helper;
+        return $.HelperSearch;
     };
 })(jQuery);
 
 $(function () {
     //初始化全局库
-    $.InitSearchHelper();
+    $.InitHelperSearch();
 })

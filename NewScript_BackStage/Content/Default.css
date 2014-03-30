@@ -19,10 +19,16 @@
 .show { display: block; }
 .hidden { display: none; }
 .clear { clear: both; }
+
 .l_Content { float: left; }
 .r_Content { float: right; }
 .tl { text-align: left; }
 .tr { text-align: right; }
+
+.inline_key { display: inline-block; }
+.inline_val { display: inline-block; }
+.block_key { display: block; }
+.block_val { display: block; }
 
 a, h1, h2, h3, h4, h5, p, span { font-family: 'Microsoft YaHei'; }
 h1, h2, h3, h4 { color: #6c757e; }
@@ -59,11 +65,29 @@ a { color: #89949f; transition: all 0.3s; }
             .ToolBar_Content ul li a:hover { background-color: #9bcc76; }
 
 /*主框体*/
-.Main_Wrap { z-index: 0; position: relative; width: auto; height: 1000px; padding: 72px 0 0 144px; background: #f6f6f6; }
+.Main_Wrap { z-index: 0; position: relative; width: auto; height: 1000px; padding: 72px 0 0 144px; background: #f2f1f1; }
     .Main_Wrap .Search_Container { position: relative; overflow: hidden; }
-        .Main_Wrap .Search_Container .Search_Content { background: #45494d; height: 72px; }
     .Main_Wrap .Main_Container { position: relative; }
-        .Main_Wrap .Main_Container .Main_Title { height: 52px; padding: 20px 0 0 0; background: #fff; overflow: hidden; }
-            .Main_Wrap .Main_Container .Main_Title h2, .Main_Wrap .Main_Title span { float: left; }
-            .Main_Wrap .Main_Container .Main_Title h2 { font-size: 26px; padding-left: 40px; margin-right: 15px; }
-        .Main_Wrap .Main_Container .Main_Content { background: url(/Content/Images/Shadow.png) repeat-x; padding: 3px 0; }
+
+.Main_Container .Main_Title { height: 52px; padding: 20px 0 0 0; background: #fff; overflow: hidden; }
+    .Main_Container .Main_Title h2, .Main_Wrap .Main_Title span { float: left; }
+    .Main_Container .Main_Title h2 { font-size: 26px; padding-left: 40px; margin-right: 15px; }
+.Main_Container .Main_Content { background: url(/Content/Images/Shadow.png) repeat-x; padding: 3px 0; text-align: center; }
+
+.Line_Box { width: auto; margin: auto; padding: 17px 0; background: #f6f6f6; }
+    .Line_Box .ColorLabel { display: inline-block; text-align: left; border-left-style: solid; border-left-width: 3px; padding: 10px 95px 10px 20px; }
+        .Line_Box .ColorLabel .block_key { color: #5c636b; font-size: 35px; }
+        .Line_Box .ColorLabel .block_val { color: #a5acb4; font-size: 14px; }
+        .Line_Box .ColorLabel.Label-Blue { border-left-color: #6bc4b6; }
+        .Line_Box .ColorLabel.Label-Orange { border-left-color: #f15822; }
+        .Line_Box .ColorLabel.Label-Green { border-left-color: #91c46b; }
+        .Line_Box .ColorLabel.Label-Red { border-left-color: #c84b4b; }
+
+.Search_Container .Main_Title { }
+.Search_Container .Main_Content { padding: 20px 40px; background: #fff; border-top: 1px solid #ccc; }
+    .Search_Container .Main_Content dl { background: #fff; border: 1px solid #6c757e; border-radius: 5px; overflow: hidden; padding: 10px 20px; }
+        .Search_Container .Main_Content dl dt, .Search_Container .Main_Content dl dd { display: inline-block; margin-right: 10px; }
+        .Search_Container .Main_Content dl dt { }
+        .Search_Container .Main_Content dl dd { }
+        .Search_Container .Main_Content dl span { color: #6c757e; font-size: 13px; }
+        .Search_Container .Main_Content dl input { border: 1px solid #6c757e; height: 16px; border-radius: 16px; padding: 5px 8px; width: 120px; background: #afb2b6; }
