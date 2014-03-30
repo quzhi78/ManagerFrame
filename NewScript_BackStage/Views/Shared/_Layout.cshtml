@@ -16,7 +16,21 @@
             <div class="Content">
                 <div class="ToolsBar">
                     <div class="ToolsBar_Logo">
-                        <img src="~/Content/Images/Logo.png" alt="生意专家" />
+                        <div class="Logo_Box">
+                            <img src="~/Content/Images/Logo.png" alt="生意专家" />
+                        </div>
+                    </div>
+                    <div class="ToolsBar_Menu">
+                        <ul>
+                            <li class="WorkFlow" onclick="$.Helper.Toggle.Class(this,'select|')">
+                                <a href="javascript:;">工作流</a>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="ToolsBar_User">
+                        <div class="User_Panel">
+                            <img src="~/Content/Images/Temp/topic.jpg" width="46" height="46" />
+                        </div>
                     </div>
                 </div>
                 <div class="MainBox">
@@ -25,7 +39,6 @@
             </div>
         </div>
     </div>
-
     <script type="text/javascript">
         //$().ready(function () {
         //    $(".Main_Wrap").css({width:$()});

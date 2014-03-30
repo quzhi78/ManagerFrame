@@ -149,10 +149,12 @@
     <Content Include="Content\Images\Helper\icon-set.png" />
     <Content Include="Content\Images\Helper\icon-Tips.png" />
     <Content Include="Content\Images\Helper\Loading.GIF" />
+    <Content Include="Content\Images\IconMenu.png" />
     <Content Include="Content\Images\logo.png" />
     <Content Include="Content\Images\Helper\MenuIcon.png" />
     <Content Include="Content\Images\Search.png" />
     <Content Include="Content\Images\Shadow.png" />
+    <Content Include="Content\Images\Temp\Topic.jpg" />
     <Content Include="Content\Reset.css" />
     <Content Include="Content\themes\base\images\ui-bg_flat_0_aaaaaa_40x100.png" />
     <Content Include="Content\themes\base\images\ui-bg_flat_75_ffffff_40x100.png" />

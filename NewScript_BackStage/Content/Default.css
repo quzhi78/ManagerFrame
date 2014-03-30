@@ -45,9 +45,32 @@ a { color: #89949f; transition: all 0.3s; }
 
 /*左侧*/
 .ToolsBar { position: fixed; top: 0; left: 0; width: 196px; height: 100%; background: #1b2224; z-index: 5000; }
+    .ToolsBar .ToolsBar_Logo { border-bottom: 1px solid #111617; text-align: center; }
+        .ToolsBar .ToolsBar_Logo .Logo_Box { margin: auto; width: 144px; height: 48px; }
+    .ToolsBar .ToolsBar_User { width: 100%; text-align: center; padding: 20px 0; border-top: 1px solid #263033; position: absolute; bottom: 0px; left: 0px; }
+        .ToolsBar .ToolsBar_User .User_Panel { margin: auto; width: 46px; height: 46px; border: 4px solid #353e41; overflow: hidden; border-radius: 46px; background: #fff; }
+            .ToolsBar .ToolsBar_User .User_Panel img { }
 
-    .ToolsBar .ToolsBar_Logo { text-align: center; padding: 15px 0; }
-        .ToolsBar .ToolsBar_Logo img { margin: auto; width: 144px; height: 48px; border: none; }
+    .ToolsBar .ToolsBar_Menu { border-top: 1px solid #111618; }
+        .ToolsBar .ToolsBar_Menu ul { padding: 10px 0; }
+            .ToolsBar .ToolsBar_Menu ul li { padding: 14px 0; line-height: 21px; }
+                .ToolsBar .ToolsBar_Menu ul li a { display: block; margin: auto; color: #637074; font-size: 14px; padding-left: 54px; transition: color 0.3s; }
+                    .ToolsBar .ToolsBar_Menu ul li a:hover { color: #323b3d; }
+                    .ToolsBar .ToolsBar_Menu ul li a.select { color: #323b3d; }
+                .ToolsBar .ToolsBar_Menu ul li.WorkFlow a { background: url(/Content/Images/IconMenu.png) 22px 0 no-repeat; height: 22px; }
+                    .ToolsBar .ToolsBar_Menu ul li.WorkFlow a.select { background: url(/Content/Images/IconMenu.png) 22px -66px no-repeat; }
+
+.MainBox { position: relative; width: auto; background: #e8e9ec; }
+    .MainBox .Main_Container { padding: 0 0 0 496px; position: relative; z-index: 0; }
+        .MainBox .Main_Container .Main_Content { height: 1000px; }
+
+    .MainBox .Center_Wrap { position: fixed; top: 0; left: 196px; width: 300px; height: 100%; background: #fff; z-index: 2500; color: #696969; }
+        .MainBox .Center_Wrap .Center_Container { }
+            .MainBox .Center_Wrap .Center_Container .Center_Content { }
+
+.Center_Content .Center_Title { }
+
+
 
 /*头部面板*/
 .HeaderPanel { position: fixed; top: 0; left: 0; width: 100%; height: 72px; background: #34383c; z-index: 5000; }
