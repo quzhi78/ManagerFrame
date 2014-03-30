@@ -15,8 +15,15 @@
 
         }
 
-        $.HelperSearch.Form = {
+        $.HelperSearch.Selector  ={
+            Container : function(){
+                return $('.Search_Container');
+            }
+        }
+
+        $.HelperSearch.Frames = {
             Show: function () {
+                $.Helper.View.MainView.MoveTo(72);
             },
             Hide: function () {
             },

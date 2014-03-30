@@ -84,20 +84,20 @@
                 var _State = true;
                 switch (typeof (Object)) {
                     case "number":
-                        _State = true;
-                        break;
+                    _State = true;
+                    break;
                     case "object":
-                        _State = false;
-                        break;
+                    _State = false;
+                    break;
                     case "string":
-                        _State = false;
-                        break;
+                    _State = false;
+                    break;
                     case "undefined":
-                        _State = true;
-                        break;
+                    _State = true;
+                    break;
                     default:
-                        _State = true;
-                        break;
+                    _State = true;
+                    break;
                 }
                 return {
                     Element: _State ? $("Body") : $(Object),
@@ -144,7 +144,6 @@
                     //OldElement.stop().animate({ top: ContainerHeight }, function () {
 
                     //});
-                    //OneElement.stop().animate({ top: 0 });
                     if (CallBack) CallBack();
                 },
                 Open: function (Index, CallBack) {
@@ -153,8 +152,13 @@
                 Remove: function (Index, CallBack) {
 
                 },
-                Search: function (CallBack) {
-
+                MoveTo:function(OffsetY, CallBack){
+                    var TheElement = $.Helper.Selector.MainWrap.find(".Main_Container:eq(0)");
+                    var Offset{
+                        top:OffsetY + (TheElement.css("top").indexOf('px') > 0 ? TheElement.css("top").replace('px','') : 0)
+                    }
+                    TheElement.stop().animate(Offset);
+                    if(CallBack) CallBack();
                 }
             },
         }
@@ -230,80 +234,80 @@
                                     _Helper.Selector.Plugs.Tips().find("#" + IdentName).css(Position);
                             }
                         }
-                },
-            }
-        }
-        $.Helper.Effects = {
-
-        }
-        $.Helper.Toggle = {
-            Class: function (Element, ToggleCondition) {
-                var _Toggle = ToggleCondition.split('|');
-                var _Element = $(Element);
-                var _Attr = _Element.attr("data-toggle");
-                if (typeof (_Attr) == "undefined") {
-                    _Element.addClass(_Toggle[0]).attr({ "data-toggle": "0" });
+                    },
                 }
-                else {
-                    if (parseInt(_Attr) == _Toggle.length - 1) {
-                        _Element.removeClass(_Toggle[_Toggle.length - 1]).addClass(_Toggle[0]).attr({ "data-toggle": "0" });
+            }
+            $.Helper.Effects = {
+
+            }
+            $.Helper.Toggle = {
+                Class: function (Element, ToggleCondition) {
+                    var _Toggle = ToggleCondition.split('|');
+                    var _Element = $(Element);
+                    var _Attr = _Element.attr("data-toggle");
+                    if (typeof (_Attr) == "undefined") {
+                        _Element.addClass(_Toggle[0]).attr({ "data-toggle": "0" });
                     }
                     else {
-                        _Element.removeClass(_Toggle[parseInt(_Attr) - 1]).addClass(_Toggle[parseInt(_Attr) + 1]).attr({ "data-toggle": parseInt(_Attr) + 1 });
+                        if (parseInt(_Attr) == _Toggle.length - 1) {
+                            _Element.removeClass(_Toggle[_Toggle.length - 1]).addClass(_Toggle[0]).attr({ "data-toggle": "0" });
+                        }
+                        else {
+                            _Element.removeClass(_Toggle[parseInt(_Attr) - 1]).addClass(_Toggle[parseInt(_Attr) + 1]).attr({ "data-toggle": parseInt(_Attr) + 1 });
+                        }
                     }
                 }
             }
+            return $.Helper;
         }
-        return $.Helper;
-    }
 
-    jQuery.DeBug = function () {
-        $.Help.Ver = {
-            title: "Helper帮助文档 1.0",
-            author: "Vito",
-            time: "2014-03-28",
-            more: "方法入口和详细介绍会陆续补充"
-        }
-        $.Help.Effects = {
-            name: "特效",
-            Shade: {
-                name: "遮罩层",
-                method: "Start|StartTimeOut|End"
-            },
-            Wait: {
-                name: "等待提示",
-                method: "Start|StartTimeOut|End"
+        jQuery.DeBug = function () {
+            $.Help.Ver = {
+                title: "Helper帮助文档 1.0",
+                author: "Vito",
+                time: "2014-03-28",
+                more: "方法入口和详细介绍会陆续补充"
             }
-        };
-        $.Help.View = {
-            name: "视图操作",
-            method: "NewMainView|OpenMainView|RemoveMainView",
-        };
-        $.Help.Html = {
-            name: "常用HTML",
-            method: "MainLayer",
-        };
-        $.Help.Selector = {
-            name: "主选择器封装",
-            method: "HeaderPanelMenu|HeaderPanelSearchButton|MainWrap|ToolBarPanelMenu",
+            $.Help.Effects = {
+                name: "特效",
+                Shade: {
+                    name: "遮罩层",
+                    method: "Start|StartTimeOut|End"
+                },
+                Wait: {
+                    name: "等待提示",
+                    method: "Start|StartTimeOut|End"
+                }
+            };
+            $.Help.View = {
+                name: "视图操作",
+                method: "NewMainView|OpenMainView|RemoveMainView",
+            };
+            $.Help.Html = {
+                name: "常用HTML",
+                method: "MainLayer",
+            };
+            $.Help.Selector = {
+                name: "主选择器封装",
+                method: "HeaderPanelMenu|HeaderPanelSearchButton|MainWrap|ToolBarPanelMenu",
+            }
+            $.Help.Size = {
+                name: "主要容器尺寸",
+                method: "ContentHeight|ContentWidth|HeaderHeight|Height|ToolBarWidth|Width",
+            }
+            $.Help.StandardSize = {
+                name: "主要元素尺寸",
+                method: "HeaderHeight|MainViewTitle|ToolBarWidth",
+            }
+            $.Help.Type = {
+                name: "类型转换|数据提取",
+                method: "PixelToInt",
+            }
         }
-        $.Help.Size = {
-            name: "主要容器尺寸",
-            method: "ContentHeight|ContentWidth|HeaderHeight|Height|ToolBarWidth|Width",
-        }
-        $.Help.StandardSize = {
-            name: "主要元素尺寸",
-            method: "HeaderHeight|MainViewTitle|ToolBarWidth",
-        }
-        $.Help.Type = {
-            name: "类型转换|数据提取",
-            method: "PixelToInt",
-        }
-    }
-})(jQuery);
+    })(jQuery);
 
 
-$(function () {
+    $(function () {
     //初始化全局库
     $.InitGlobal();
 })
