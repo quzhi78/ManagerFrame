@@ -44,32 +44,75 @@ a { color: #89949f; transition: all 0.3s; }
 
 
 /*左侧*/
-.ToolsBar { position: fixed; top: 0; left: 0; width: 196px; height: 100%; background: #1b2224; z-index: 5000; }
-    .ToolsBar .ToolsBar_Logo { border-bottom: 1px solid #111617; text-align: center; }
-        .ToolsBar .ToolsBar_Logo .Logo_Box { margin: auto; width: 144px; height: 48px; }
-    .ToolsBar .ToolsBar_User { width: 100%; text-align: center; padding: 20px 0; border-top: 1px solid #263033; position: absolute; bottom: 0px; left: 0px; }
+.ToolsBar { position: fixed; top: 0; left: 0; width: 76px; height: 100%; background: #33373b; z-index: 5000; }
+    /*.ToolsBar .ToolsBar_Logo { border-bottom: 1px solid #111617; text-align: center; }
+        .ToolsBar .ToolsBar_Logo .Logo_Box { margin: auto; width: 144px; height: 48px; }*/
+    .ToolsBar .ToolsBar_User { width: 100%; text-align: center; padding: 15px 0; border-top: 1px solid #263033; position: absolute; bottom: 0px; left: 0px; }
         .ToolsBar .ToolsBar_User .User_Panel { margin: auto; width: 46px; height: 46px; border: 4px solid #353e41; overflow: hidden; border-radius: 46px; background: #fff; }
             .ToolsBar .ToolsBar_User .User_Panel img { }
 
     .ToolsBar .ToolsBar_Menu { border-top: 1px solid #111618; }
-        .ToolsBar .ToolsBar_Menu ul { padding: 10px 0; }
-            .ToolsBar .ToolsBar_Menu ul li { padding: 14px 0; line-height: 21px; }
-                .ToolsBar .ToolsBar_Menu ul li a { display: block; margin: auto; color: #637074; font-size: 14px; padding-left: 54px; transition: color 0.3s; }
-                    .ToolsBar .ToolsBar_Menu ul li a:hover { color: #323b3d; }
-                    .ToolsBar .ToolsBar_Menu ul li a.select { color: #323b3d; }
-                .ToolsBar .ToolsBar_Menu ul li.WorkFlow a { background: url(/Content/Images/IconMenu.png) 22px 0 no-repeat; height: 22px; }
-                    .ToolsBar .ToolsBar_Menu ul li.WorkFlow a.select { background: url(/Content/Images/IconMenu.png) 22px -66px no-repeat; }
+        .ToolsBar .ToolsBar_Menu ul { padding: 76px 0; }
+            .ToolsBar .ToolsBar_Menu ul li { overflow: hidden; }
+                .ToolsBar .ToolsBar_Menu ul li a { background-image: url(/Content/Images/MenuIcon.png); background-repeat: no-repeat; width: 76px; height: 76px; display: block; margin: auto; color: #637074; font-size: 14px; transition: color 0.3s; text-indent: -9999px; }
+                .ToolsBar .ToolsBar_Menu ul li.WorkFlow a { background-position: 0 0; }
+                    .ToolsBar .ToolsBar_Menu ul li.WorkFlow a:hover { background-position: -76px 0; background-color: #2f3338; }
+                    .ToolsBar .ToolsBar_Menu ul li.WorkFlow a.select { background-color: #2b2f33; }
 
-.MainBox { position: relative; width: auto; background: #e8e9ec; }
-    .MainBox .Main_Container { padding: 0 0 0 496px; position: relative; z-index: 0; }
+.MainBox { position: relative; width: auto; background: #fff; }
+    .MainBox .Main_Container { padding: 0 0 0 436px; position: relative; z-index: 0; }
         .MainBox .Main_Container .Main_Content { height: 1000px; }
 
-    .MainBox .Center_Wrap { position: fixed; top: 0; left: 196px; width: 300px; height: 100%; background: #fff; z-index: 2500; color: #696969; }
-        .MainBox .Center_Wrap .Center_Container { }
-            .MainBox .Center_Wrap .Center_Container .Center_Content { }
+    .MainBox .Center_Wrap { position: fixed; top: 0; left: 76px; width: 360px; height: 100%; background: #fff; z-index: 2500; color: #696969; }
+        .MainBox .Center_Wrap .Center_Container { height: 100%; }
+            .MainBox .Center_Wrap .Center_Container .Center_Content { height: 100%; }
 
-.Center_Content .Center_Title { }
+.Center_Content .Center_Title { padding: 20px 0; position: relative; }
 
+/*.Center_Content .Center_Title.HighLv { }
+        .Center_Content .Center_Title.HighLv h4 { color: #fff; font-weight: normal; }*/
+
+
+.Center_Content .Center_Box { position: relative; overflow-x: hidden; height: 100%; }
+    .Center_Content .Center_Box ul { background: url(/Content/Images/ListStyle_Line.png) repeat-y 39px 0; padding: 20px 0; }
+        .Center_Content .Center_Box ul li { position: relative; }
+            .Center_Content .Center_Box ul li a { display: block; }
+            .Center_Content .Center_Box ul li span { display: inline-block; }
+                .Center_Content .Center_Box ul li span.TaskIco { padding-left: 20px; width: 40px; height: 40px; background-image: url(/Content/Images/ListStyle.png); background-repeat: no-repeat; }
+
+            .Center_Content .Center_Box ul li.RedLv a { padding: 24px 0; }
+            .Center_Content .Center_Box ul li.RedLv span.TaskIco { background-position: 20px 0; }
+            .Center_Content .Center_Box ul li.RedLv span.TaskText { }
+
+            .Center_Content .Center_Box ul li.OrgLv a { padding: 16px 0; }
+            .Center_Content .Center_Box ul li.OrgLv span.TaskIco { background-position: -280px -40px; }
+            .Center_Content .Center_Box ul li.OrgLv span.TaskText { }
+
+            .Center_Content .Center_Box ul li.BluLv a { padding: 8px 0; }
+            .Center_Content .Center_Box ul li.BluLv span.TaskIco { background-position: -580px -80px; }
+            .Center_Content .Center_Box ul li.BluLv span.TaskText { }
+
+            .Center_Content .Center_Box ul li.GreLv a { }
+            .Center_Content .Center_Box ul li.GreLv span.TaskIco { background-position: -880px -120px; }
+            .Center_Content .Center_Box ul li.GreLv span.TaskText { }
+
+
+    .Center_Content .Center_Box::-webkit-scrollbar { height: 11px; width: 6px; background-color: rgba(0,0,0,0.1); border-radius: 6px; }
+    .Center_Content .Center_Box::-webkit-scrollbar-button { display: none; height: 0px; width: 0px; }
+        .Center_Content .Center_Box::-webkit-scrollbar-button:start:decrement, .Center_Content .Center_Box::-webkit-scrollbar-button:end:increment { display: block; }
+        .Center_Content .Center_Box::-webkit-scrollbar-button:vertical:start:increment, .Center_Content .Center_Box::-webkit-scrollbar-button:vertical:end:decrement { display: none; }
+    .Center_Content .Center_Box::-webkit-scrollbar-track:vertical, .Center_Content .Center_Box::-webkit-scrollbar-track:horizontal, .Center_Content .Center_Box::-webkit-scrollbar-thumb:vertical, .Center_Content .Center_Box::-webkit-scrollbar-thumb:horizontal, .Center_Content .Center_Box::-webkit-scrollbar-track:vertical, .Center_Content .Center_Box::-webkit-scrollbar-track:horizontal, .Center_Content .Center_Box::-webkit-scrollbar-thumb:vertical, .Center_Content .Center_Box::-webkit-scrollbar-thumb:horizontal { border-style: solid; border-color: transparent; }
+        .Center_Content .Center_Box::-webkit-scrollbar-track:vertical::-webkit-scrollbar-track:horizontal { background-clip: padding-box; background-color: #fff; }
+    .Center_Content .Center_Box::-webkit-scrollbar-thumb { background-clip: padding-box; background-color: rgba(0,0,0,0.2); border-radius: 6px; min-height: 28px; }
+        .Center_Content .Center_Box::-webkit-scrollbar-thumb:hover { background-color: rgba(0,0,0,.3); }
+        .Center_Content .Center_Box::-webkit-scrollbar-thumb:active { background-color: rgba(0,0,0,.5); }
+        .Center_Content .Center_Box::-webkit-scrollbar-track:vertical, .Center_Content .Center_Box::-webkit-scrollbar-track:horizontal, .Center_Content .Center_Box::-webkit-scrollbar-thumb:vertical, .Center_Content .Center_Box::-webkit-scrollbar-thumb:horizontal { border-width: 0; }
+    .Center_Content .Center_Box::-webkit-scrollbar-track:hover { background-color: rgba(0,0,0,.05); }
+    .Center_Content .Center_Box::-webkit-scrollbar-track:active { background-color: rgba(0,0,0,.05); }
+
+/*.Center_Content .Center_Box::-webkit-scrollbar-track { width: 2px; overflow: hidden; }
+    .Center_Content .Center_Box::-webkit-scrollbar-thumb { width: 10px; border-radius: 5px; background: #CBCBCB; }
+    .Center_Content .Center_Box::-webkit-scrollbar-button { display: none; }*/
 
 
 /*头部面板*/

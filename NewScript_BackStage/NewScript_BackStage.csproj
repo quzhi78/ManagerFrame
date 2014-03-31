@@ -149,9 +149,11 @@
     <Content Include="Content\Images\Helper\icon-set.png" />
     <Content Include="Content\Images\Helper\icon-Tips.png" />
     <Content Include="Content\Images\Helper\Loading.GIF" />
-    <Content Include="Content\Images\IconMenu.png" />
+    <Content Include="Content\Images\ListStyle.png" />
+    <Content Include="Content\Images\ListStyle_Line.png" />
     <Content Include="Content\Images\logo.png" />
     <Content Include="Content\Images\Helper\MenuIcon.png" />
+    <Content Include="Content\Images\MenuIcon.png" />
     <Content Include="Content\Images\Search.png" />
     <Content Include="Content\Images\Shadow.png" />
     <Content Include="Content\Images\Temp\Topic.jpg" />
