@@ -11,6 +11,8 @@
 */
 
 /*公共定义*/
+html { overflow: hidden; }
+
 .min { height: 0px; overflow: hidden; }
     .min > * { opacity: 0; display: none; }
 .max { height: auto; overflow: hidden; }
@@ -31,7 +33,7 @@
 .block_val { display: block; }
 
 a, h1, h2, h3, h4, h5, p, span { font-family: 'Microsoft YaHei'; }
-h1, h2, h3, h4 { color: #6c757e; }
+h1, h2, h3, h4 { color: #323b3d; }
 ul { list-style-type: none; }
 a { color: #89949f; transition: all 0.3s; }
     a:hover { color: #cdd4db; text-decoration: none; }
@@ -60,9 +62,6 @@ a { color: #89949f; transition: all 0.3s; }
                     .ToolsBar .ToolsBar_Menu ul li.WorkFlow a.select { background-color: #2b2f33; }
 
 .MainBox { position: relative; width: auto; background: #fff; }
-    .MainBox .Main_Container { padding: 0 0 0 436px; position: relative; z-index: 0; }
-        .MainBox .Main_Container .Main_Content { height: 1000px; }
-
     .MainBox .Center_Wrap { position: fixed; top: 0; left: 76px; width: 360px; height: 100%; background: #fff; z-index: 2500; color: #696969; }
         .MainBox .Center_Wrap .Center_Container { height: 100%; }
             .MainBox .Center_Wrap .Center_Container .Center_Content { height: 100%; }
@@ -79,6 +78,18 @@ a { color: #89949f; transition: all 0.3s; }
             .Center_Content .Center_Box ul li a { display: block; }
             .Center_Content .Center_Box ul li span { display: inline-block; }
                 .Center_Content .Center_Box ul li span.TaskIco { padding-left: 20px; width: 40px; height: 40px; background-image: url(/Content/Images/ListStyle.png); background-repeat: no-repeat; }
+
+            .Center_Content .Center_Box ul li.Quto { padding: 31px 0; }
+                .Center_Content .Center_Box ul li.Quto a { padding: 10px 20px; color: #ccc; }
+                    .Center_Content .Center_Box ul li.Quto a:hover { color: #fff; }
+                .Center_Content .Center_Box ul li.Quto .Quto_Title { color: #fff; padding: 0 4px; }
+                .Center_Content .Center_Box ul li.Quto .Quto_Value { width: 40px; color: #fff; border-radius: 5px; padding: 5px 0; text-align: center; letter-spacing: 2px; }
+
+                .Center_Content .Center_Box ul li.Quto.Red a { background: #d63434; }
+                .Center_Content .Center_Box ul li.Quto.Red .Quto_Value { background: #b12222; }
+
+                .Center_Content .Center_Box ul li.Quto.Org a { background: #fda737; }
+                .Center_Content .Center_Box ul li.Quto.Org .Quto_Value { background: #eb9628; }
 
             .Center_Content .Center_Box ul li.RedLv a { padding: 24px 0; }
             .Center_Content .Center_Box ul li.RedLv span.TaskIco { background-position: 20px 0; }
@@ -110,23 +121,6 @@ a { color: #89949f; transition: all 0.3s; }
     .Center_Content .Center_Box::-webkit-scrollbar-track:hover { background-color: rgba(0,0,0,.05); }
     .Center_Content .Center_Box::-webkit-scrollbar-track:active { background-color: rgba(0,0,0,.05); }
 
-/*.Center_Content .Center_Box::-webkit-scrollbar-track { width: 2px; overflow: hidden; }
-    .Center_Content .Center_Box::-webkit-scrollbar-thumb { width: 10px; border-radius: 5px; background: #CBCBCB; }
-    .Center_Content .Center_Box::-webkit-scrollbar-button { display: none; }*/
-
-
-/*头部面板*/
-.HeaderPanel { position: fixed; top: 0; left: 0; width: 100%; height: 72px; background: #34383c; z-index: 5000; }
-    .HeaderPanel .HeaderPanel_Container { width: 100%; height: 72px; overflow: hidden; }
-        .HeaderPanel .HeaderPanel_Container .HeaderPanelLogo { height: 48px; width: 144px; background: #1c2125; padding: 12px 0; }
-        .HeaderPanel .HeaderPanel_Container .HeaderPanelItem { height: 72px; padding-left: 40px; }
-            .HeaderPanel .HeaderPanel_Container .HeaderPanelItem ul { overflow: hidden; padding: 28px 0; }
-                .HeaderPanel .HeaderPanel_Container .HeaderPanelItem ul li { float: left; margin-right: 40px; }
-                    .HeaderPanel .HeaderPanel_Container .HeaderPanelItem ul li a { font-size: 16px; }
-        .HeaderPanel .HeaderPanel_Container .HeaderPanelSearch a { display: block; cursor: pointer; background: url(/Content/Images/Search.png) no-repeat center center; width: 72px; height: 72px; }
-            .HeaderPanel .HeaderPanel_Container .HeaderPanelSearch a.select { background-color: #45494d; }
-            .HeaderPanel .HeaderPanel_Container .HeaderPanelSearch a:hover { background-color: #45494d; }
-        .HeaderPanel .HeaderPanel_Container .HeaderPanelMenu { background: #1c2125; width: 196px; height: 100%; }
 
 /*左侧工具栏*/
 .ToolBar_Wrap { position: fixed; top: 0; left: 0; width: 144px; height: 100%; background: #91c46b; z-index: 2000; }
@@ -139,29 +133,23 @@ a { color: #89949f; transition: all 0.3s; }
             .ToolBar_Content ul li a:hover { background-color: #9bcc76; }
 
 /*主框体*/
-.Main_Wrap { z-index: 0; position: relative; width: auto; height: 1000px; padding: 72px 0 0 144px; background: #f2f1f1; }
-    .Main_Wrap .Search_Container { position: relative; overflow: hidden; }
-    .Main_Wrap .Main_Container { position: relative; }
+.MainBox .Main_Wrap { padding: 0 0 0 436px; position: relative; z-index: 0; }
+    .MainBox .Main_Wrap .Main_Container { position: relative; overflow: hidden; padding: 0 50px; }
 
-.Main_Container .Main_Title { height: 52px; padding: 20px 0 0 0; background: #fff; overflow: hidden; }
-    .Main_Container .Main_Title h2, .Main_Wrap .Main_Title span { float: left; }
-    .Main_Container .Main_Title h2 { font-size: 26px; padding-left: 40px; margin-right: 15px; }
-.Main_Container .Main_Content { background: url(/Content/Images/Shadow.png) repeat-x; padding: 3px 0; text-align: center; }
+.Main_Container .Main_Title { height: 54px; padding: 32px 0 0 0; background: #fff; overflow: hidden; border-bottom: 1px solid #e9eff0; }
+    .Main_Container .Main_Title h2 { font-size: 26px; display: block; margin-bottom: 4px; }
 
-.Line_Box { width: auto; margin: auto; padding: 17px 0; background: #f6f6f6; }
-    .Line_Box .ColorLabel { display: inline-block; text-align: left; border-left-style: solid; border-left-width: 3px; padding: 10px 95px 10px 20px; }
-        .Line_Box .ColorLabel .block_key { color: #5c636b; font-size: 35px; }
-        .Line_Box .ColorLabel .block_val { color: #a5acb4; font-size: 14px; }
-        .Line_Box .ColorLabel.Label-Blue { border-left-color: #6bc4b6; }
-        .Line_Box .ColorLabel.Label-Orange { border-left-color: #f15822; }
-        .Line_Box .ColorLabel.Label-Green { border-left-color: #91c46b; }
-        .Line_Box .ColorLabel.Label-Red { border-left-color: #c84b4b; }
+    .Main_Container .Main_Title span { float: left; font-size: 12px; font-weight: normal; display: block; border-radius: 5px; padding: 4px 7px; }
+        .Main_Container .Main_Title span.HighVer { color: #fff; background: #d63434; margin-right: 10px; }
+        .Main_Container .Main_Title span.ShopID { color: #fff; background: #323b3d; font-size: 12px; padding: 4px 5px 3px 5px; }
 
-.Search_Container .Main_Title { }
-.Search_Container .Main_Content { padding: 20px 40px; background: #fff; border-top: 1px solid #ccc; }
-    .Search_Container .Main_Content dl { background: #fff; border: 1px solid #6c757e; border-radius: 5px; overflow: hidden; padding: 10px 20px; }
-        .Search_Container .Main_Content dl dt, .Search_Container .Main_Content dl dd { display: inline-block; margin-right: 10px; }
-        .Search_Container .Main_Content dl dt { }
-        .Search_Container .Main_Content dl dd { }
-        .Search_Container .Main_Content dl span { color: #6c757e; font-size: 13px; }
-        .Search_Container .Main_Content dl input { border: 1px solid #6c757e; height: 16px; border-radius: 16px; padding: 5px 8px; width: 120px; background: #afb2b6; }
+.Main_Container .Main_Content { height: 1000px; padding: 3px 0; text-align: center; }
+    .Main_Container .Main_Content .Data_Panel { width: 200px; height: 300px; overflow: hidden; }
+    .Main_Container .Main_Content figure { margin: 0px; padding: 0px; }
+    .Main_Container .Main_Content .Data_Panel .DashBoard_Box { height: 150px; }
+
+    .Main_Container .Main_Content .UserData_Wrap { width: 100%; padding: 20px 0; }
+    .Main_Container .Main_Content .UserData_Container { position: relative; overflow: hidden; }
+    .Main_Container .Main_Content .UserData_Content { height: 400px; border-radius: 5px; }
+
+.UserData_Content .UserTips { width: 160px; }

@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
+using CloudAir.ProtoType.Custom;
 
 namespace NewScript_BackStage.Controllers
 {
@@ -13,7 +14,9 @@ namespace NewScript_BackStage.Controllers
 
         public ActionResult Index()
         {
-            return View();
+            var obj = new SvrHandle();
+            var mod = obj.GetAll();
+            return View(mod);
         }
 
     }

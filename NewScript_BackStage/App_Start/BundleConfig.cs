@@ -5,6 +5,7 @@ namespace NewScript_BackStage
 {
     public class BundleConfig
     {
+        //所有脚本不能是Min版本,压缩后代码不能添加在集合里
         public static void RegisterBundles(BundleCollection bundles)
         {
             bundles.Add(new ScriptBundle("~/Script/Global").Include(
@@ -12,6 +13,18 @@ namespace NewScript_BackStage
                         "~/Scripts/Global/HelperSearch.js"
                         ));
 
+            //顺序不能调整
+            //插件包
+            bundles.Add(new ScriptBundle("~/Script/Addons").Include(
+                        "~/Scripts/Addons/Raphael.js",
+                        "~/Scripts/Addons/JustGage/JustGage.js"
+                        ));
+            bundles.Add(new ScriptBundle("~/Script/Addons/Charts").Include(
+                        "~/Scripts/Addons/HighCharts/HighCharts.js"
+                        //"~/Scripts/Addons/JustGage/JustGage.js"
+                        ));
+            bundles.Add(new StyleBundle("~/Style/Addons").Include(
+                        ));
 
             //MVC自带脚本压缩和合并库.脚本会自动进行整合处理
             //脚本写这里   

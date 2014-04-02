@@ -40,6 +40,12 @@
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="Microsoft.CSharp" />
+    <Reference Include="MongoDB.Bson">
+      <HintPath>..\packages\Mongodb.1.7.1.4791\lib\net40\MongoDB.Bson.dll</HintPath>
+    </Reference>
+    <Reference Include="MongoDB.Driver">
+      <HintPath>..\packages\Mongodb.1.7.1.4791\lib\net40\MongoDB.Driver.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Data" />
     <Reference Include="System.Data.Entity" />
@@ -132,6 +138,7 @@
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="App_Start\WebApiConfig.cs" />
     <Compile Include="Controllers\AccountController.cs" />
+    <Compile Include="Controllers\api\CustomTaskController.cs" />
     <Compile Include="Controllers\api\GetMenuController.cs" />
     <Compile Include="Controllers\CustomSvrController.cs" />
     <Compile Include="Controllers\helper\GlobalController.cs" />
@@ -215,6 +222,9 @@
     <Content Include="Global.asax" />
     <Content Include="Content\Site.css" />
     <None Include="Scripts\OriginalScript\jquery-1.8.2.intellisense.js" />
+    <Content Include="Scripts\Addons\HighCharts\HighCharts.js" />
+    <Content Include="Scripts\Addons\HighCharts\jQuery.HighChartTable.js" />
+    <Content Include="Scripts\Addons\Raphael.js" />
     <Content Include="Scripts\Global\Helper.js" />
     <Content Include="Scripts\Global\HelperSearch.js" />
     <Content Include="Scripts\OriginalScript\jquery-1.8.2.js" />
@@ -232,6 +242,8 @@
     <Content Include="Scripts\OriginalScript\knockout-2.2.0.js" />
     <Content Include="Scripts\OriginalScript\modernizr-2.6.2.js" />
     <Content Include="Scripts\OriginalScript\_references.js" />
+    <Content Include="Scripts\Addons\jQuery.mCustomScrollbar.js" />
+    <Content Include="Scripts\Addons\JustGage\JustGage.js" />
     <Content Include="Web.config" />
     <Content Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
@@ -254,6 +266,26 @@
     <Content Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\..\BLL\BLL.csproj">
+      <Project>{53ea29de-dfda-48e8-9011-b438c613f785}</Project>
+      <Name>BLL</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\DAL\DAL.csproj">
+      <Project>{0b6898e5-6915-4a30-9677-334a491c1412}</Project>
+      <Name>DAL</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\Model\Model.csproj">
+      <Project>{743bad13-dc1a-4980-acff-701ae5f14f0d}</Project>
+      <Name>Model</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\Utility\Utility.csproj">
+      <Project>{b9d564c7-591f-402f-90c3-03edf90abb78}</Project>
+      <Name>Utility</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\CloudAir\CloudAir.csproj">
+      <Project>{64d6881c-ae0a-409e-9f72-a88bc081dfaf}</Project>
+      <Name>CloudAir</Name>
+    </ProjectReference>
     <ProjectReference Include="..\Helper\Helper.csproj">
       <Project>{3d9ccf0d-0f27-4965-81f0-94d396b058d9}</Project>
       <Name>Helper</Name>

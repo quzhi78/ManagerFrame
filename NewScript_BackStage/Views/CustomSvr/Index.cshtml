@@ -1,10 +1,18 @@
 ﻿@{
     ViewBag.Title = "Index";
 }
+
+@section Head{
+    @Scripts.Render("~/Script/Addons")
+    @Scripts.Render("~/Script/Addons/Charts")
+}
+
+@model MongoDB.Driver.MongoCursor<CloudAir.ProtoType.Custom.Model.Task>
+
 <div class="Center_Wrap">
     <div class="Center_Container">
         <div class="Center_Content">
-            <div class="Center_Box">
+            <div class="Center_Box content">
                 <ul>
                     <li class="RedLv">
                         <a href="javascript:;">
@@ -24,13 +32,10 @@
                             <span class="TaskText"></span>
                         </a>
                     </li>
-                    @*<li class="Warning">
-                        <span></span>
-                    </li>*@
-                    <li class="OrgLv">
+                    <li class="Quto Red">
                         <a href="javascript:;">
-                            <span class="TaskIco"></span>
-                            <span class="TaskText"></span>
+                            <span class="Quto_Value">3</span>
+                            <span class="Quto_Title">紧急任务!请尽快处理</span>
                         </a>
                     </li>
                     <li class="OrgLv">
@@ -69,45 +74,10 @@
                             <span class="TaskText"></span>
                         </a>
                     </li>
-                    <li class="OrgLv">
+                    <li class="Quto Org">
                         <a href="javascript:;">
-                            <span class="TaskIco"></span>
-                            <span class="TaskText"></span>
-                        </a>
-                    </li>
-                    <li class="OrgLv">
-                        <a href="javascript:;">
-                            <span class="TaskIco"></span>
-                            <span class="TaskText"></span>
-                        </a>
-                    </li>
-                    <li class="OrgLv">
-                        <a href="javascript:;">
-                            <span class="TaskIco"></span>
-                            <span class="TaskText"></span>
-                        </a>
-                    </li>
-                    <li class="OrgLv">
-                        <a href="javascript:;">
-                            <span class="TaskIco"></span>
-                            <span class="TaskText"></span>
-                        </a>
-                    </li>
-                    <li class="OrgLv">
-                        <a href="javascript:;">
-                            <span class="TaskIco"></span>
-                            <span class="TaskText"></span>
-                        </a>
-                    <li class="OrgLv">
-                        <a href="javascript:;">
-                            <span class="TaskIco"></span>
-                            <span class="TaskText"></span>
-                        </a>
-                    </li>
-                    <li class="OrgLv">
-                        <a href="javascript:;">
-                            <span class="TaskIco"></span>
-                            <span class="TaskText"></span>
+                            <span class="Quto_Value">10</span>
+                            <span class="Quto_Title">每日任务</span>
                         </a>
                     </li>
                     <li class="BluLv">
@@ -115,6 +85,7 @@
                             <span class="TaskIco"></span>
                             <span class="TaskText"></span>
                         </a>
+                    </li>
                     <li class="BluLv">
                         <a href="javascript:;">
                             <span class="TaskIco"></span>
@@ -151,6 +122,17 @@
                             <span class="TaskText"></span>
                         </a>
                     </li>
+                    <li class="GreLv">
+                        <a href="javascript:;">
+                            <span class="TaskIco"></span>
+                            <span class="TaskText"></span>
+                        </a>
+                    </li>
+                    <li class="GreLv">
+                        <a href="javascript:;">
+                            <span class="TaskIco"></span>
+                            <span class="TaskText"></span>
+                        </a>
                     </li>
                 </ul>
             </div>
@@ -160,94 +142,90 @@
         </div>
     </div>
 </div>
-@*<div class="Search_Container">
-        <div class="Search_Content">
-            <dl>
-                <dt>
-                    <span class="span_key">店铺ID</span>
-                    <span class="span_val"><input name="ShopID" /></span>
-                </dt>
-                <dd>
-                    <span class="span_key">店铺ID</span>
-                    <span class="span_val"><input name="ShopID" /></span>
-                </dd>
-                <dd>
-                    <span class="span_key">店铺ID</span>
-                    <span class="span_val"><input name="ShopID" /></span>
-                </dd>
-                <dd>
-                    <span class="span_key">店铺ID</span>
-                    <span class="span_val"><input name="ShopID" /></span>
-                </dd>
-                <dd>
-                    <span class="span_key">店铺ID</span>
-                    <span class="span_val"><input name="ShopID" /></span>
-                </dd>
-            </dl>
-        </div>
-    </div>*@
-@*<div class="Main_Container Search_Container">
+<div class="Main_Wrap">
+    <div class="Main_Container">
         <div class="Main_Title">
-            <h2>查询</h2>
-            <span class="icon-se"></span>
+            <h2>星星上的店铺</h2>
+            <span class="HighVer">高级版</span>
         </div>
         <div class="Main_Content">
-            <dl>
-                <dt>
-                    <span class="span_key">店铺ID</span>
-                    <span class="span_val"><input name="ShopID" /></span>
-                </dt>
-                <dd>
-                    <span class="span_key">店铺ID</span>
-                    <span class="span_val"><input name="ShopID" /></span>
-                </dd>
-                <dd>
-                    <span class="span_key">店铺ID</span>
-                    <span class="span_val"><input name="ShopID" /></span>
-                </dd>
-                <dd>
-                    <span class="span_key">店铺ID</span>
-                    <span class="span_val"><input name="ShopID" /></span>
-                </dd>
-                <dd>
-                    <span class="span_key">店铺ID</span>
-                    <span class="span_val"><input name="ShopID" /></span>
-                </dd>
-            </dl>
-        </div>
-    </div>*@
-<div class="Main_Container">
-    <div class="Main_Title">
-        <h2>综合</h2>
-        <span class="icon-se"></span>
-    </div>
-    <div class="Main_Content">
-        <div class="Line_Box">
-            <div class="ColorLabel Label-Green">
-                <span class="block_key">103</span>
-                <span class="block_val">客户反馈</span>
+            <div class="UserData_Wrap">
+                <div class="UserData_Container">
+                    <div class="UserData_Content">
+                        <div class="UserTips">
+                            <div class="icon-xx">
+                            </div>
+                            <span class="UserTips_Title">
+                                店主名称
+                            </span>
+                            <div class="UserTips_Value">
+                            </div>
+                        </div>
+                    </div>
+                </div>
             </div>
-            <div class="ColorLabel Label-Orange">
-                <span class="block_key">1332</span>
-                <span class="block_val">平台回访</span>
-            </div>
-            <div class="ColorLabel Label-Red">
-                <span class="block_key">30</span>
-                <span class="block_val">日常回访</span>
-            </div>
-            <div class="ColorLabel Label-Blue">
-                <span class="block_key">0</span>
-                <span class="block_val">新增订单</span>
-            </div>
-            <div class="ColorLabel Label-Green">
-                <span class="block_key">300</span>
-                <span class="block_val">新增用户</span>
-            </div>
-            <div class="ColorLabel Label-Blue">
-                <span class="block_key">20</span>
-                <span class="block_val">新增</span>
-            </div>
+
+            <table>
+                @foreach (var i in Model)
+                {
+                    <tr>
+                        <td>@i.dt_Time</td>
+                        <td>@i.inerttime</td>
+                        <td>@i.t_mk</td>
+                    </tr>
+                }
+            </table>
+            @*<div class="Data_Panel l_Content">
+                    <div id="dashboard_msg" class="DashBoard_Box">
+                    </div>
+                    <div id="dashboard_overadv" class="DashBoard_Box">
+                    </div>
+                </div>
+                <div class="l_Content" id="charts_user">
+                    <figure style="width: 800px; height: 300px;" id="myChart"></figure>
+                </div>
+                <div class="Data_Panel r_Content">
+                    <div id="dashboard_" class="DashBoard_Box">
+                    </div>
+                    <div id="dashboard_overadv" class="DashBoard_Box">
+                    </div>
+                </div>*@
         </div>
     </div>
 </div>
 
+@section Scripts{
+    <script type="text/javascript">
+        //载入滚动条插件
+        //$(window).load(function () {
+        //    $(".content").mCustomScrollbar();
+        //});
+        var g1, g2;
+        window.onload = function () {
+            var g1 = new JustGage({
+                id: "dashboard_msg",
+                value: getRandomInt(500, 3000),
+                min: 0,
+                max: 5000,
+                formatNumber: true,
+                title: "短信剩余",
+                label: "条",
+                levelColorsGradient: true,
+                startAnimationTime: 1,
+                gaugeWidthScale: 0.3
+            });
+            var g2 = new JustGage({
+                id: "dashboard_overadv",
+                value: getRandomInt(0, 200),
+                min: 0,
+                max: 365,
+                formatNumber: true,
+                title: "版本到期",
+                label: "天",
+                levelColorsGradient: true,
+                startAnimationTime: 1,
+                gaugeWidthScale: 0.3,
+            });
+        };
+    </script>
+}
