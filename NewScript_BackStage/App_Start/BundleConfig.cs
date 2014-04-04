@@ -10,7 +10,8 @@ namespace NewScript_BackStage
         {
             bundles.Add(new ScriptBundle("~/Script/Global").Include(
                         "~/Scripts/Global/Helper.js",
-                        "~/Scripts/Global/HelperSearch.js"
+                        "~/Scripts/Global/HelperSearch.js",
+                        "~/Scripts/Global/HelperTree.js"
                         ));
 
             //顺序不能调整
@@ -21,7 +22,7 @@ namespace NewScript_BackStage
                         ));
             bundles.Add(new ScriptBundle("~/Script/Addons/Charts").Include(
                         "~/Scripts/Addons/HighCharts/HighCharts.js"
-                        //"~/Scripts/Addons/JustGage/JustGage.js"
+                //"~/Scripts/Addons/JustGage/JustGage.js"
                         ));
             bundles.Add(new StyleBundle("~/Style/Addons").Include(
                         ));

@@ -1,4 +1,5 @@
-﻿using System;
+﻿using MongoDB.Bson;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Net;
@@ -9,5 +10,22 @@ namespace NewScript_BackStage.Controllers.api
 {
     public class CustomTaskController : ApiController
     {
+        public IEnumerable<Model.TaskQueue> Post(int id = -1, int skip = 0)
+        {
+            int limit = 20;
+            switch (id)
+            {
+                case 0:
+                    return BLL.BTaskQueue.GetRealTimeTask();
+                case 1:
+                    return BLL.BTaskQueue.GetHightTask(skip, limit);
+                case 2:
+                    return BLL.BTaskQueue.GetMediumTask(skip, limit);
+                case 3:
+                    return BLL.BTaskQueue.GetLowTask(skip, limit);
+                default:
+                    return null;
+            }
+        }
     }
 }

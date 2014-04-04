@@ -11,6 +11,8 @@
 */
 
 /*公共定义*/
+@font-face { font-family: 'iconfont'; src: url('http://at.alicdn.com/t/font_1396539962_3754275.eot'); /* IE9*/ src: url('http://at.alicdn.com/t/font_1396539962_3754275.eot?#iefix') format('embedded-opentype'), /* IE6-IE8 */ url('http://at.alicdn.com/t/font_1396539962_4017541.woff') format('woff'), /* chrome、firefox */ url('http://at.alicdn.com/t/font_1396539962_3285084.ttf') format('truetype'), /* chrome、firefox、opera、Safari, Android, iOS 4.2+*/ url('http://at.alicdn.com/t/font_1396539962_4624813.svg#iconfont') format('svg'); /* iOS 4.1- */ }
+
 html { overflow: hidden; }
 
 .min { height: 0px; overflow: hidden; }
@@ -32,18 +34,20 @@ html { overflow: hidden; }
 .block_key { display: block; }
 .block_val { display: block; }
 
+.iconfont { font-family: "iconfont"; font-size: 16px; font-style: normal; }
+
 a, h1, h2, h3, h4, h5, p, span { font-family: 'Microsoft YaHei'; }
 h1, h2, h3, h4 { color: #323b3d; }
 ul { list-style-type: none; }
 a { color: #89949f; transition: all 0.3s; }
     a:hover { color: #cdd4db; text-decoration: none; }
 
+
+
 /*通用框体*/
 .Wrap { }
     .Wrap .Container { }
         .Wrap .Container .Content { position: relative; overflow: hidden; }
-
-
 
 /*左侧*/
 .ToolsBar { position: fixed; top: 0; left: 0; width: 76px; height: 100%; background: #33373b; z-index: 5000; }
@@ -78,6 +82,14 @@ a { color: #89949f; transition: all 0.3s; }
             .Center_Content .Center_Box ul li a { display: block; }
             .Center_Content .Center_Box ul li span { display: inline-block; }
                 .Center_Content .Center_Box ul li span.TaskIco { padding-left: 20px; width: 40px; height: 40px; background-image: url(/Content/Images/ListStyle.png); background-repeat: no-repeat; }
+            .Center_Content .Center_Box ul li p { font-size: 13px; margin-bottom: 3px; }
+
+            .Center_Content .Center_Box ul li .TaskWrap { position: relative; top: -45px; left: 58px; width: 275px; overflow: hidden; }
+                .Center_Content .Center_Box ul li .TaskWrap .icon_arrow { font-size: 28px; color: #f3f3f3; position: absolute; top: 10px; }
+                .Center_Content .Center_Box ul li .TaskWrap .TaskContent { transition: background 0.3s; width: 241px; border-radius: 3px; padding: 9px 10px 7px 10px; overflow: hidden; position: relative; left: 14px; background: #fbfbfb; }
+            .Center_Content .Center_Box ul li:hover .TaskWrap .icon_arrow { color: #e9edf0; }
+            .Center_Content .Center_Box ul li:hover .TaskWrap .TaskContent { background: #e9edf0; }
+                .Center_Content .Center_Box ul li:hover .TaskWrap .TaskContent a { color: #323b3d; }
 
             .Center_Content .Center_Box ul li.Quto { padding: 31px 0; }
                 .Center_Content .Center_Box ul li.Quto a { padding: 10px 20px; color: #ccc; }
@@ -85,27 +97,27 @@ a { color: #89949f; transition: all 0.3s; }
                 .Center_Content .Center_Box ul li.Quto .Quto_Title { color: #fff; padding: 0 4px; }
                 .Center_Content .Center_Box ul li.Quto .Quto_Value { width: 40px; color: #fff; border-radius: 5px; padding: 5px 0; text-align: center; letter-spacing: 2px; }
 
-                .Center_Content .Center_Box ul li.Quto.Red a { background: #d63434; }
-                .Center_Content .Center_Box ul li.Quto.Red .Quto_Value { background: #b12222; }
+                .Center_Content .Center_Box ul li.Quto.RealTime a { background: #d63434; }
+                .Center_Content .Center_Box ul li.Quto.RealTime .Quto_Value { background: #b12222; }
 
-                .Center_Content .Center_Box ul li.Quto.Org a { background: #fda737; }
-                .Center_Content .Center_Box ul li.Quto.Org .Quto_Value { background: #eb9628; }
+                .Center_Content .Center_Box ul li.Quto.High a { background: #fda737; }
+                .Center_Content .Center_Box ul li.Quto.High .Quto_Value { background: #eb9628; }
 
-            .Center_Content .Center_Box ul li.RedLv a { padding: 24px 0; }
-            .Center_Content .Center_Box ul li.RedLv span.TaskIco { background-position: 20px 0; }
-            .Center_Content .Center_Box ul li.RedLv span.TaskText { }
+            .Center_Content .Center_Box ul li.RealTimeNode a { /*padding: 24px 0;*/ }
+            .Center_Content .Center_Box ul li.RealTimeNode span.TaskIco { background-position: 20px 0; }
+            .Center_Content .Center_Box ul li.RealTimeNode span.TaskType { }
 
-            .Center_Content .Center_Box ul li.OrgLv a { padding: 16px 0; }
-            .Center_Content .Center_Box ul li.OrgLv span.TaskIco { background-position: -280px -40px; }
-            .Center_Content .Center_Box ul li.OrgLv span.TaskText { }
+            .Center_Content .Center_Box ul li.HighNode a { /*padding: 16px 0;*/ }
+            .Center_Content .Center_Box ul li.HighNode span.TaskIco { background-position: -280px -40px; }
+            .Center_Content .Center_Box ul li.HighNode span.TaskType { }
 
-            .Center_Content .Center_Box ul li.BluLv a { padding: 8px 0; }
-            .Center_Content .Center_Box ul li.BluLv span.TaskIco { background-position: -580px -80px; }
-            .Center_Content .Center_Box ul li.BluLv span.TaskText { }
+            .Center_Content .Center_Box ul li.MediumNode a { /*padding: 8px 0;*/ }
+            .Center_Content .Center_Box ul li.MediumNode span.TaskIco { background-position: -580px -80px; }
+            .Center_Content .Center_Box ul li.MediumNode span.TaskType { }
 
-            .Center_Content .Center_Box ul li.GreLv a { }
-            .Center_Content .Center_Box ul li.GreLv span.TaskIco { background-position: -880px -120px; }
-            .Center_Content .Center_Box ul li.GreLv span.TaskText { }
+            .Center_Content .Center_Box ul li.LowNode a { }
+            .Center_Content .Center_Box ul li.LowNode span.TaskIco { background-position: -880px -120px; }
+            .Center_Content .Center_Box ul li.LowNode span.TaskType { }
 
 
     .Center_Content .Center_Box::-webkit-scrollbar { height: 11px; width: 6px; background-color: rgba(0,0,0,0.1); border-radius: 6px; }

@@ -12,10 +12,7 @@ namespace NewScript_BackStage.Controllers.api
         // GET api/getmenu
         public IEnumerable<string> Get()
         {
-            //if (System.Web.HttpContext.Current.Session["User"] != null)
-            //{
-            return new string[] { "value1", "value2" };
-            //}
+            return null;
         }
     }
 }

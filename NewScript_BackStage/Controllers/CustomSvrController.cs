@@ -14,9 +14,7 @@ namespace NewScript_BackStage.Controllers
 
         public ActionResult Index()
         {
-            var obj = new SvrHandle();
-            var mod = obj.GetAll();
-            return View(mod);
+            return View();
         }
 
     }

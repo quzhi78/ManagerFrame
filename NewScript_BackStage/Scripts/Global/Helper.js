@@ -6,7 +6,6 @@
 */
 (function ($) {
     jQuery.Helper = {};
-    jQuery.Help = {};
 
     jQuery.InitGlobal = function () {
         var _Helper = $.Helper;
@@ -37,7 +36,7 @@
         $.Helper.StandardSize = {
             HeaderHeight: 72,
             ToolBarWidth: 144,
-            MainViewTitle: 78,
+            MainViewTitle: 78
         }
         //尺寸
         $.Helper.Size = {
@@ -51,8 +50,8 @@
         //选择器
         $.Helper.Selector = {
             Frames: {
-                HeaderPanelMenu: $(".HeaderPanelItem"),
-                ToolBarPanelMenu: $(".ToolBar_Content"),
+                MiddlePanel: $(".MainBox .Center_Content"),
+                ToolBarPanelMenu: $(".ToolsBar"),
                 MainContent: $(".Main_Wrap"),
                 Wrap: $(".Wrap"),
 
@@ -118,6 +117,11 @@
                     }
                 }
             },
+            MongoDateToDate: function (sTime) {
+                sTime = sTime.substr(0, sTime.indexOf('.'));
+                sTime = sTime.replace('T', ' ');
+                return '[' + sTime + ']';
+            }
         }
         //操作方法
         $.Helper.View = {
