@@ -7,16 +7,7 @@ using System.Text;
 
 namespace CloudAir.MongoHelper
 {
-    //条件操作符
-    //$gt : >
-    //$lt : <
-    //$gte: >=
-    //$lte: <=
-    //$ne : !=、<>
-    //$in : in
-    //$nin: not in
-    //$all: all
-    //$not: 反匹配(1.3.3及以上版本)
+    
 
 
     public enum _MongoEnum
