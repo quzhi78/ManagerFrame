@@ -131,23 +131,6 @@
             },
             MainView: {
                 New: function (Title, CallBack) {
-                    //var OldElement = $.Helper.Selector.MainWrap.find(".Main_Container");
-                    //var ContainerCount = OldElement.length;
-                    //var OffsetY = -(ContainerCount * $.Helper.StandardSize.MainViewTitle);
-                    //var ContainerHeight = $.Helper.Size.ContentHeight + OffsetY;
-                    //OldElement.each(function () {
-                    //    if ($.Helper.Type.PixelToInt($(this).css("top")) >= ContainerHeight)
-                    //        $(this).stop().css({ top: ContainerHeight - $.Helper.StandardSize.MainViewTitle }).find(".Main_Content").addClass("min")
-                    //    else
-                    //        $(this).stop().animate({ top: ContainerHeight - $.Helper.StandardSize.MainViewTitle }).find(".Main_Content").addClass("min")
-                    //});
-
-                    //$.Helper.Selector.MainWrap.prepend($.Helper.Html.MainLayer(Title));
-                    //var OneElement = $.Helper.Selector.MainWrap.find(".Main_Container:eq(0)");
-                    //OneElement.css({ top: -$.Helper.Size.ContentHeight }).find(".Main_Content").css({ height: ContainerHeight });
-                    //OldElement.stop().animate({ top: ContainerHeight }, function () {
-
-                    //});
                     if (CallBack) CallBack();
                 },
                 Open: function (Index, CallBack) {
