@@ -115,5 +115,5 @@
 $(function () {
     //初始化全局库
     $.InitHelperTree();
-    //$.HelperTree.Server.Request.GetTaskGroup(2);
+    $.HelperTree.Server.Request.GetTaskGroup(2);
 })
