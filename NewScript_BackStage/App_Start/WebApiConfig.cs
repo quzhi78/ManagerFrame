@@ -11,8 +11,8 @@ namespace NewScript_BackStage
         {
             config.Routes.MapHttpRoute(
                 name: "DefaultAPI",
-                routeTemplate: "api/{controller}/{id}",
-                defaults: new { id = RouteParameter.Optional }
+                routeTemplate: "api/{controller}/{isParameter}/{isPage}",
+                defaults: new { isParameter = RouteParameter.Optional, isPage = RouteParameter.Optional, id = RouteParameter.Optional }
             );
         }
     }

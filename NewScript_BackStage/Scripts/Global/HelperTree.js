@@ -21,9 +21,9 @@
                 var x = ['RealTimeNode', 'HighNode', 'MediumNode', 'LowNode'];
                 return x[ranNum];
             },
-            NodeCode: function (sClass) {
-                var html = '<li class="{0}"><span class="TaskIco"></span><div class="TaskWrap"><span class="iconfont icon_arrow">&#xf01a8;</span></div></li>';
-                return html.replace('{0}', sClass);
+            NodeCode: function () {
+                var html = '<dd class="LabelWrap"> <div class="LabelContent"><a href="javascript:;" onclick="void(0);"><p class="title"><span class="tl iconfont">{0}</span><span class="tl span_1">{1}</span><span class="tr span_2">{2}</span></p><p class="describe"><span class="tl">{3}</span><span class="tr iconfont">{4}</span></p></a></div></dd>';
+                return html;
             },
             NodeContentCode: function (args) {
                 var html = '<div class="TaskContent"><a href="javascript:;" onClick="$.HelperTree.View.Go(this,{0})"><p class="TaskType">{1}</p><p class="TaskDetails">{2}</p><p class="TaskTime tr">{3}</p></a></div>';
@@ -41,7 +41,7 @@
 
         $.HelperTree.Selector = {
             TreeList: function () {
-                return $(".Center_Box ul", _Helper.Selector.Frames.MiddlePanel);
+                return $(".Center_Box dl", _Helper.Selector.Frames.MiddlePanel);
             }
         }
 
@@ -62,12 +62,18 @@
             }
         }
 
+
+
+
         $.HelperTree.Handle = {
-            NewNode: function (json, nType) {
-                $.each(json, function (nIndex, oItem) {
-                    _HelperTree.Selector.TreeList().append(_HelperTree.Html.NodeCode(_HelperTree.Html.NodeType([nType])));
-                    var oTextMod = _HelperTree.Text.Task(oItem.t_mk);
-                    _HelperTree.Selector.TreeList().find("li:last div.TaskWrap").append(_HelperTree.Html.NodeContentCode([oItem.id, oTextMod.TaskType, oTextMod.TaskDetails, _Helper.Type.MongoDateToDate(oItem.dt_Time)]));
+            NewNode: function (isJsonData, isTaskType) {
+                $.each(isJsonData, function (isIntIndex, isItem) {
+                    var isHtmlNode = _HelperTree.Html.NodeCode();
+                    isHtmlNode = isHtmlNode.replace("{0}", "&#xf018e;").replace("{1}", "").replace("{2}")
+
+                    _HelperTree.Selector.TreeList().append();
+                    //var oTextMod = _HelperTree.Text.Task(oItem.t_mk);
+                    //_HelperTree.Selector.TreeList().find("li:last div.TaskWrap").append(_HelperTree.Html.NodeContentCode([oItem.id, oTextMod.TaskType, oTextMod.TaskDetails, _Helper.Type.MongoDateToDate(oItem.dt_Time)]));
                 });
             },
             RemoveNode: function (obj) {
@@ -94,11 +100,11 @@
                 GetTaskGroup: function (nTask) {
                     $.ajax({
                         type: "POST",
-                        url: "/API/CustomTask/" + nTask,
+                        url: "/api/CustomTask/" + nTask,
                         dataType: "json",
                         success: function (data) {
                             if (data != null)
-                                _HelperTree.Handle.NewNode(data, nTask);
+                                _HelperTree.Handle.NewNode(data.isData, nTask);
                         },
                         error: function (msg) {
                             //错误处理
@@ -115,5 +121,5 @@
 $(function () {
     //初始化全局库
     $.InitHelperTree();
-    //$.HelperTree.Server.Request.GetTaskGroup(2);
+    $.HelperTree.Server.Request.GetTaskGroup(2);
 })

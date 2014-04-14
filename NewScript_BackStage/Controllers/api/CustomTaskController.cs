@@ -10,18 +10,18 @@ namespace NewScript_BackStage.Controllers.api
 {
     public class CustomTaskController : ApiController
     {
-        public IEnumerable<Model.isModels.isTask> Post(int id = -1, int isPage = 0)
+        public isResults<Model.isModels.isTaskQueueExport> Post(int isParameter = -1, int isPage = 0)
         {
-            switch (id)
+            switch (isParameter)
             {
                 case 0:
-                    return BLL.isDataProcess.isTask.GetRealTimeTask();
+                    return BLL.isDataProcess.isTask.GetRealTimeTask().ToResults<Model.isModels.isTask, Model.isModels.isTaskQueueExport>();
                 case 1:
-                    return BLL.isDataProcess.isTask.GetHightTask();
+                    return BLL.isDataProcess.isTask.GetHightTask().ToResults<Model.isModels.isTask, Model.isModels.isTaskQueueExport>();
                 case 2:
-                    return BLL.isDataProcess.isTask.GetMediumTask(isPage);
+                    return BLL.isDataProcess.isTask.GetMediumTask(isPage).ToResults<Model.isModels.isTask, Model.isModels.isTaskQueueExport>();
                 case 3:
-                    return BLL.isDataProcess.isTask.GetLowTask(isPage);
+                    return BLL.isDataProcess.isTask.GetLowTask(isPage).ToResults<Model.isModels.isTask, Model.isModels.isTaskQueueExport>();
                 default:
                     return null;
             }
