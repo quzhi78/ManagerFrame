@@ -1,14 +1,10 @@
 ﻿@{
     ViewBag.Title = "Index";
 }
-
 @section Head{
     @Scripts.Render("~/Script/Addons")
     @Scripts.Render("~/Script/Addons/Charts")
 }
-
-@model MongoDB.Driver.MongoCursor<CloudAir.ProtoType.Custom.Model.Task>
-
 <div class="Center_Wrap">
     <div class="Center_Container">
         <div class="Center_Content">
@@ -45,7 +41,6 @@
                         <div class="LabelContent">
                             <a href="javascript:;" onclick="void(0);"></a>
                         </div>
-
                         @*<div class="LabelWrap">
                                 <div class="LabelContainer">
                                     <div class="LabelContent">
@@ -57,7 +52,6 @@
                         <div class="LabelContent">
                             <a href="javascript:;" onclick="void(0);"></a>
                         </div>
-
                         @*<div class="LabelWrap">
                                 <div class="LabelContainer">
                                     <div class="LabelContent">
@@ -69,7 +63,6 @@
                         <div class="LabelContent">
                             <a href="javascript:;" onclick="void(0);"></a>
                         </div>
-
                         @*<div class="LabelWrap">
                                 <div class="LabelContainer">
                                     <div class="LabelContent">
@@ -125,7 +118,6 @@
         </div>
     </div>
 </div>
-
 @section Scripts{
     <script type="text/javascript">
         //载入滚动条插件

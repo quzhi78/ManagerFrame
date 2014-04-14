@@ -10,7 +10,7 @@ namespace NewScript_BackStage.Controllers.helper
     {
         public ActionResult ValidateCode()
         {
-            string vnum = Helper.Assist.rndnum(6);
+            string vnum = "123422";
             Session["vnum"] = vnum;
             System.Drawing.Bitmap img = null;
             System.Drawing.Graphics g = null;
