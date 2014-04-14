@@ -285,14 +285,6 @@
       <Project>{b9d564c7-591f-402f-90c3-03edf90abb78}</Project>
       <Name>Utility</Name>
     </ProjectReference>
-    <ProjectReference Include="..\CloudAir\CloudAir.csproj">
-      <Project>{64d6881c-ae0a-409e-9f72-a88bc081dfaf}</Project>
-      <Name>CloudAir</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\Helper\Helper.csproj">
-      <Project>{3d9ccf0d-0f27-4965-81f0-94d396b058d9}</Project>
-      <Name>Helper</Name>
-    </ProjectReference>
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>

@@ -11,7 +11,9 @@
 */
 
 /*公共定义*/
-@font-face { font-family: 'iconfont'; src: url('http://at.alicdn.com/t/font_1396539962_3754275.eot'); /* IE9*/ src: url('http://at.alicdn.com/t/font_1396539962_3754275.eot?#iefix') format('embedded-opentype'), /* IE6-IE8 */ url('http://at.alicdn.com/t/font_1396539962_4017541.woff') format('woff'), /* chrome、firefox */ url('http://at.alicdn.com/t/font_1396539962_3285084.ttf') format('truetype'), /* chrome、firefox、opera、Safari, Android, iOS 4.2+*/ url('http://at.alicdn.com/t/font_1396539962_4624813.svg#iconfont') format('svg'); /* iOS 4.1- */ }
+@font-face { font-family: 'iconfont'; src: url('http://at.alicdn.com/t/font_1396836036_8649824.eot'); /* IE9*/ src: url('http://at.alicdn.com/t/font_1396836036_8649824.eot?#iefix') format('embedded-opentype'), /* IE6-IE8 */ url('http://at.alicdn.com/t/font_1396836036_8918924.woff') format('woff'), /* chrome、firefox */ url('http://at.alicdn.com/t/font_1396836036_8230362.ttf') format('truetype'), /* chrome、firefox、opera、Safari, Android, iOS 4.2+*/ url('http://at.alicdn.com/t/font_1396836036_9197032.svg#iconfont') format('svg'); /* iOS 4.1- */ }
+
+
 
 html { overflow: hidden; }
 
@@ -50,9 +52,7 @@ a { color: #89949f; transition: all 0.3s; }
         .Wrap .Container .Content { position: relative; overflow: hidden; }
 
 /*左侧*/
-.ToolsBar { position: fixed; top: 0; left: 0; width: 76px; height: 100%; background: #33373b; z-index: 5000; }
-    /*.ToolsBar .ToolsBar_Logo { border-bottom: 1px solid #111617; text-align: center; }
-        .ToolsBar .ToolsBar_Logo .Logo_Box { margin: auto; width: 144px; height: 48px; }*/
+.ToolsBar { position: fixed; top: 0; left: 0; width: 75px; height: 100%; background: #202024; z-index: 5000; border-right: 1px solid #09090a; }
     .ToolsBar .ToolsBar_User { width: 100%; text-align: center; padding: 15px 0; border-top: 1px solid #263033; position: absolute; bottom: 0px; left: 0px; }
         .ToolsBar .ToolsBar_User .User_Panel { margin: auto; width: 46px; height: 46px; border: 4px solid #353e41; overflow: hidden; border-radius: 46px; background: #fff; }
             .ToolsBar .ToolsBar_User .User_Panel img { }
@@ -66,69 +66,41 @@ a { color: #89949f; transition: all 0.3s; }
                     .ToolsBar .ToolsBar_Menu ul li.WorkFlow a.select { background-color: #2b2f33; }
 
 .MainBox { position: relative; width: auto; background: #fff; }
-    .MainBox .Center_Wrap { position: fixed; top: 0; left: 76px; width: 360px; height: 100%; background: #fff; z-index: 2500; color: #696969; }
+    .MainBox .Center_Wrap { position: fixed; top: 0; left: 76px; width: 360px; height: 100%; background: #202024; z-index: 2500; color: #696969; border-left: 1px solid #2e2e31; }
         .MainBox .Center_Wrap .Center_Container { height: 100%; }
             .MainBox .Center_Wrap .Center_Container .Center_Content { height: 100%; }
 
 .Center_Content .Center_Title { padding: 20px 0; position: relative; }
 
-/*.Center_Content .Center_Title.HighLv { }
-        .Center_Content .Center_Title.HighLv h4 { color: #fff; font-weight: normal; }*/
-
-
+/**/
 .Center_Content .Center_Box { position: relative; overflow-x: hidden; height: 100%; }
-    .Center_Content .Center_Box ul { background: url(/Content/Images/ListStyle_Line.png) repeat-y 39px 0; padding: 20px 0; }
-        .Center_Content .Center_Box ul li { position: relative; }
-            .Center_Content .Center_Box ul li a { display: block; }
-            .Center_Content .Center_Box ul li span { display: inline-block; }
-                .Center_Content .Center_Box ul li span.TaskIco { padding-left: 20px; width: 40px; height: 40px; background-image: url(/Content/Images/ListStyle.png); background-repeat: no-repeat; }
-            .Center_Content .Center_Box ul li p { font-size: 13px; margin-bottom: 3px; }
+    .Center_Content .Center_Box dl { position: relative; overflow: hidden; min-height: 101%; }
+        .Center_Content .Center_Box dl dt { overflow: hidden; background: #f7f8f8; position: fixed; top: 0px; width: 356px; display: block; }
+            .Center_Content .Center_Box dl dt span { display: block; float: left; height: 6px; }
+                .Center_Content .Center_Box dl dt span.high { background: #d72727; width: 10%; }
+                .Center_Content .Center_Box dl dt span.medium { background: #ffb403; width: 30%; }
+                .Center_Content .Center_Box dl dt span.low { background: #1866eb; width: 20%; }
+                .Center_Content .Center_Box dl dt span.other { background: #ccc; width: 40%; }
+        .Center_Content .Center_Box dl dd.LabelWrap { display: block; border-top: 1px solid #2e2e32; border-bottom: 1px solid #09090a; overflow: hidden; position: relative; }
+            .Center_Content .Center_Box dl dd.LabelWrap .LabelContent { position: relative; overflow: hidden; padding: 18px 20px; }
+                .Center_Content .Center_Box dl dd.LabelWrap .LabelContent a { display: block; overflow: hidden; }
+                    .Center_Content .Center_Box dl dd.LabelWrap .LabelContent a p { }
+                        .Center_Content .Center_Box dl dd.LabelWrap .LabelContent a p.title { overflow: hidden; height: 18px; line-height: 18px; padding: 3px 0; }
+                            .Center_Content .Center_Box dl dd.LabelWrap .LabelContent a p.title span { display: block; float: left; }
+                                .Center_Content .Center_Box dl dd.LabelWrap .LabelContent a p.title span.iconfont { width: 14px; text-align: center; line-height: 20px; margin-right: 12px; }
+                                .Center_Content .Center_Box dl dd.LabelWrap .LabelContent a p.title span.span_1 { font-size: 14px; width: 245px; }
+                                .Center_Content .Center_Box dl dd.LabelWrap .LabelContent a p.title span.span_2 { font-size: 12px; line-height: 22px; width: 45px; }
+                        .Center_Content .Center_Box dl dd.LabelWrap .LabelContent a p.describe { padding: 3px 0 3px 26px; }
 
-            .Center_Content .Center_Box ul li .TaskWrap { position: relative; top: -45px; left: 58px; width: 275px; overflow: hidden; }
-                .Center_Content .Center_Box ul li .TaskWrap .icon_arrow { font-size: 28px; color: #f3f3f3; position: absolute; top: 10px; }
-                .Center_Content .Center_Box ul li .TaskWrap .TaskContent { transition: background 0.3s; width: 241px; border-radius: 3px; padding: 9px 10px 7px 10px; overflow: hidden; position: relative; left: 14px; background: #fbfbfb; }
-            .Center_Content .Center_Box ul li:hover .TaskWrap .icon_arrow { color: #e9edf0; }
-            .Center_Content .Center_Box ul li:hover .TaskWrap .TaskContent { background: #e9edf0; }
-                .Center_Content .Center_Box ul li:hover .TaskWrap .TaskContent a { color: #323b3d; }
-
-            .Center_Content .Center_Box ul li.Quto { padding: 31px 0; }
-                .Center_Content .Center_Box ul li.Quto a { padding: 10px 20px; color: #ccc; }
-                    .Center_Content .Center_Box ul li.Quto a:hover { color: #fff; }
-                .Center_Content .Center_Box ul li.Quto .Quto_Title { color: #fff; padding: 0 4px; }
-                .Center_Content .Center_Box ul li.Quto .Quto_Value { width: 40px; color: #fff; border-radius: 5px; padding: 5px 0; text-align: center; letter-spacing: 2px; }
-
-                .Center_Content .Center_Box ul li.Quto.RealTime a { background: #d63434; }
-                .Center_Content .Center_Box ul li.Quto.RealTime .Quto_Value { background: #b12222; }
-
-                .Center_Content .Center_Box ul li.Quto.High a { background: #fda737; }
-                .Center_Content .Center_Box ul li.Quto.High .Quto_Value { background: #eb9628; }
-
-            .Center_Content .Center_Box ul li.RealTimeNode a { /*padding: 24px 0;*/ }
-            .Center_Content .Center_Box ul li.RealTimeNode span.TaskIco { background-position: 20px 0; }
-            .Center_Content .Center_Box ul li.RealTimeNode span.TaskType { }
-
-            .Center_Content .Center_Box ul li.HighNode a { /*padding: 16px 0;*/ }
-            .Center_Content .Center_Box ul li.HighNode span.TaskIco { background-position: -280px -40px; }
-            .Center_Content .Center_Box ul li.HighNode span.TaskType { }
-
-            .Center_Content .Center_Box ul li.MediumNode a { /*padding: 8px 0;*/ }
-            .Center_Content .Center_Box ul li.MediumNode span.TaskIco { background-position: -580px -80px; }
-            .Center_Content .Center_Box ul li.MediumNode span.TaskType { }
-
-            .Center_Content .Center_Box ul li.LowNode a { }
-            .Center_Content .Center_Box ul li.LowNode span.TaskIco { background-position: -880px -120px; }
-            .Center_Content .Center_Box ul li.LowNode span.TaskType { }
-
-
-    .Center_Content .Center_Box::-webkit-scrollbar { height: 11px; width: 6px; background-color: rgba(0,0,0,0.1); border-radius: 6px; }
+    .Center_Content .Center_Box::-webkit-scrollbar { height: 11px; width: 4px; background-color: rgba(255,255,255,.5); }
     .Center_Content .Center_Box::-webkit-scrollbar-button { display: none; height: 0px; width: 0px; }
         .Center_Content .Center_Box::-webkit-scrollbar-button:start:decrement, .Center_Content .Center_Box::-webkit-scrollbar-button:end:increment { display: block; }
         .Center_Content .Center_Box::-webkit-scrollbar-button:vertical:start:increment, .Center_Content .Center_Box::-webkit-scrollbar-button:vertical:end:decrement { display: none; }
     .Center_Content .Center_Box::-webkit-scrollbar-track:vertical, .Center_Content .Center_Box::-webkit-scrollbar-track:horizontal, .Center_Content .Center_Box::-webkit-scrollbar-thumb:vertical, .Center_Content .Center_Box::-webkit-scrollbar-thumb:horizontal, .Center_Content .Center_Box::-webkit-scrollbar-track:vertical, .Center_Content .Center_Box::-webkit-scrollbar-track:horizontal, .Center_Content .Center_Box::-webkit-scrollbar-thumb:vertical, .Center_Content .Center_Box::-webkit-scrollbar-thumb:horizontal { border-style: solid; border-color: transparent; }
         .Center_Content .Center_Box::-webkit-scrollbar-track:vertical::-webkit-scrollbar-track:horizontal { background-clip: padding-box; background-color: #fff; }
-    .Center_Content .Center_Box::-webkit-scrollbar-thumb { background-clip: padding-box; background-color: rgba(0,0,0,0.2); border-radius: 6px; min-height: 28px; }
-        .Center_Content .Center_Box::-webkit-scrollbar-thumb:hover { background-color: rgba(0,0,0,.3); }
-        .Center_Content .Center_Box::-webkit-scrollbar-thumb:active { background-color: rgba(0,0,0,.5); }
+    .Center_Content .Center_Box::-webkit-scrollbar-thumb { background-clip: padding-box; background-color: rgba(24,104,238,.8); min-height: 28px; }
+        .Center_Content .Center_Box::-webkit-scrollbar-thumb:hover { background-color: rgba(255,255,255,.4); }
+        .Center_Content .Center_Box::-webkit-scrollbar-thumb:active { background-color: rgba(255,255,255,.5); }
         .Center_Content .Center_Box::-webkit-scrollbar-track:vertical, .Center_Content .Center_Box::-webkit-scrollbar-track:horizontal, .Center_Content .Center_Box::-webkit-scrollbar-thumb:vertical, .Center_Content .Center_Box::-webkit-scrollbar-thumb:horizontal { border-width: 0; }
     .Center_Content .Center_Box::-webkit-scrollbar-track:hover { background-color: rgba(0,0,0,.05); }
     .Center_Content .Center_Box::-webkit-scrollbar-track:active { background-color: rgba(0,0,0,.05); }

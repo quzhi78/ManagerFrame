@@ -10,7 +10,7 @@ namespace NewScript_BackStage.Controllers.api
 {
     public class CustomTaskController : ApiController
     {
-        public IEnumerable<Model.TaskQueue> Post(int id = -1, int skip = 0)
+        public IEnumerable<Model.isModels.isTask> Post(int id = -1, int skip = 0)
         {
             int limit = 20;
             switch (id)

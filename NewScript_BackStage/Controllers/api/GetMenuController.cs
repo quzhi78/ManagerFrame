@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Model.isModels;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Net;
@@ -10,9 +11,16 @@ namespace NewScript_BackStage.Controllers.api
     public class GetMenuController : ApiController
     {
         // GET api/getmenu
-        public IEnumerable<string> Get()
+        public isResults<isTaskQueueExport> Get()
         {
-            return null;
+            //测试数据
+            //实际情况为数据层取出
+            IList<Model.isModels.isTask> isModel = new List<Model.isModels.isTask>();
+            for (var i = 0; i < 10; i++)
+            {
+                isModel.Add(new Model.isModels.isTask() { id = i, t_mk = string.Format("第{0}条测试", i), accountid = i + 50 });
+            }
+            return isModel.ToResults<isTask, isTaskQueueExport>();
         }
     }
 }
